@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JET GO ALERT - Earthquake Early Warning</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script defer src="js/alerts.js"></script>
+    <script defer src="js/maps.js"></script>
+</head>
+<body>
+    <header>
+        <h1>JET GO ALERT</h1>
+        <p>Real-Time Earthquake Early Warning System</p>
+        <button id="darkModeToggle">Dark Mode</button>
+    </header>
+
+    <section id="earthquake-alerts">
+        <h2>Latest Earthquake Alerts</h2>
+        <div id="alert-container">Loading alerts...</div>
+    </section>
+
+    <section id="map">
+        <h2>Earthquake Epicenter Map</h2>
+        <div id="quakeMap" style="height: 400px;"></div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 JET GO ALERT | Powered by PHIVOLCS Data</p>
+    </footer>
+</body>
+</html>
