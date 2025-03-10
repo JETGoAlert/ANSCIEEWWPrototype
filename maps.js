@@ -1,14 +1,34 @@
+let map;
+
 function initMap() {
-    const map = new google.maps.Map(document.getElementById("quakeMap"), {
+    map = new google.maps.Map(document.getElementById("quakeMap"), {
         center: { lat: 14.5995, lng: 120.9842 }, // Manila default
         zoom: 6
     });
 
-    // Example earthquake epicenter
-    const epicenter = new google.maps.Marker({
-        position: { lat: 13.41, lng: 123.29 }, // Example coordinates
-        map,
-        title: "Recent Earthquake",
-        icon: "https://maps.google.com/mapfiles/ms/icons/red-dot.png"
-    });
+    fetch('data/past_quakes.json')
+        .then(response => response.json())
+        .then(data => {
+            data.earthquakes.forEach(quake => {
+                new google.maps.Marker({
+                    position: { lat: quake.lat, lng: quake.lng },
+                    map,
+                    title: `Magnitude ${quake.magnitude} Earthquake`,
+                    icon: "https://maps.google.com/mapfiles/ms/icons/red-dot.png"
+                });
+            });
+        });
+
+    fetch('data/evac_centers.json')
+        .then(response => response.json())
+        .then(data => {
+            data.centers.forEach(center => {
+                new google.maps.Marker({
+                    position: { lat: center.lat, lng: center.lng },
+                    map,
+                    title: `Evacuation Center: ${center.name}`,
+                    icon: "https://maps.google.com/mapfiles/ms/icons/green-dot.png"
+                });
+            });
+        });
 }
