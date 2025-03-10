@@ -1,0 +1,15 @@
+{
+  "identifier": "PHIVOLCS-EQ-20250311-01",
+  "sender": "PHIVOLCS",
+  "sent": "2025-03-11T10:30:00+08:00",
+  "status": "Actual",
+  "msgType": "Alert",
+  "scope": "Public",
+  "info": {
+    "event": "Earthquake",
+    "severity": "Severe",
+    "urgency": "Immediate",
+    "certainty": "Observed",
+    "description": "A magnitude 6.8 earthquake has been detected near Manila. Take immediate precautions."
+  }
+}
